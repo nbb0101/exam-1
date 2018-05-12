@@ -1,16 +1,13 @@
-[
-{
-    "url": "imgs/classify-bg.jpg"
-},
-{
-    "url": "imgs/classify-bg.jpg"
-},
-{
-    "url": "imgs/classify-bg.jpg"
-},
-{
-    "url": "imgs/classify-bg.jpg"
-},
-{
-    "url": "imgs/classify-bg.jpg"
-}]
+[{
+        "url": "1.png"
+    },
+    {
+        "url": "2.png"
+    },
+    {
+        "url": "3.png"
+    },
+    {
+        "url": "4.png"
+    }
+]
