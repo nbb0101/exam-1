@@ -8,13 +8,67 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
 </head>
 
 <body>
     <div class="wrap">
-        <header></header>
-        <section></section>
-        <footer></footer>
+        <header>
+            <i class="icon iconfont icon-yinlezanting"></i>
+            <label for="">
+                <input type="text" placeholder="给你推荐 逍遥叹/胡歌">
+                <i class="icon iconfont icon-fangdajing"></i>
+            </label>
+            <i class="icon iconfont icon-infenicon18"></i>
+        </header>
+        <section>
+            <div class="btn-items">
+                <main class="item tab swiper-container">
+                    <nav>
+                        <span class="active">音乐</span>
+                        <span>视频</span>
+                        <span>电台</span>
+                    </nav>
+                    <div class="box swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="banner swiper-container">
+                                <div class="bans swiper-wrapper">
+                                    <div class="swiper-slide"><img src="./imgs/1.png"></div>
+                                    <div class="swiper-slide"><img src="./imgs/2.png"></div>
+                                    <div class="swiper-slide"><img src="./imgs/3.png"></div>
+                                    <div class="swiper-slide"><img src="./imgs/4.png"></div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">2</div>
+                        <div class="swiper-slide">3</div>
+                    </div>
+                </main>
+                <main class="item">我的音乐</main>
+                <main class="item">朋友</main>
+                <main class="item">账号</main>
+            </div>
+
+        </section>
+        <footer>
+            <a href="javascript:;" class="btn on">
+                <i class="icon iconfont icon-yinlezanting"></i>
+                <span>发现音乐</span>
+            </a>
+            <a href="javascript:;" class="btn">
+                <i class="icon iconfont icon-tengxunweibo2"></i>
+                <span>我的音乐</span>
+            </a>
+            <a href="javascript:;" class="btn">
+                <i class="icon iconfont icon-gongzuo"></i>
+                <span>朋友</span>
+            </a>
+            <a href="javascript:;" class="btn">
+                <i class="icon iconfont icon-yonghu"></i>
+                <span>账号</span>
+            </a>
+        </footer>
         <script src="./js/libs/jquery.min.js"></script>
         <script src="./js/libs/swiper-3.4.2.jquery.min.js"></script>
         <script src="./js/main.js"></script>

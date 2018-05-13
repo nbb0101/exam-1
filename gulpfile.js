@@ -26,14 +26,16 @@ gulp.task('clean', function() {
     return gulp.src('target')
         .pipe(clean())
 });
-gulp.task('cleanCss', function() {
-    gulp.src('target/css/*.css')
-        .pipe(clean())
+
+//拷贝fonts
+gulp.task('copyFonts', function() {
+    gulp.src('src/fonts/*')
+        .pipe(gulp.dest('target/fonts'))
 });
 
 //css文件的操作
 //转义scss,压缩css
-gulp.task('minCss', ['cleanCss'], function() {
+gulp.task('minCss', function() {
     return gulp.src('src/**/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
@@ -50,15 +52,15 @@ gulp.task('copyCss', function() {
 
 //js文件的操作
 //压缩js
-gulp.task('minJs', function() {
-    return gulp.src(["src/js/**/*.js", "!src/js/libs/*.min.js"])
-        .pipe(minJs())
-        .pipe(gulp.dest('target/js'))
-});
+// gulp.task('minJs', function() {
+//     return gulp.src(["src/js/**/*.js", "!src/js/libs/*.min.js"])
+//         .pipe(minJs())
+//         .pipe(gulp.dest('target/js'))
+// });
 //拷贝js
 gulp.task('copyJs', function() {
-    return gulp.src('src/js/libs/*.min.js')
-        .pipe(gulp.dest('target/js/libs'))
+    return gulp.src('src/js/**/*.js')
+        .pipe(gulp.dest('target/js'))
 });
 
 //imgs文件的操作
@@ -79,19 +81,19 @@ gulp.task('copyHtml', function() {
 gulp.task('watch', function() {
     gulp.watch('src/*.html', ['copyHtml'])
     gulp.watch('src/**/*.scss', ['minCss'])
-    gulp.watch('src/js/*.js', ['minJs'])
+    gulp.watch('src/js/*.js', ['copyJs'])
 })
 
 //起服务
 gulp.task('server', function() {
     gulp.src('target')
         .pipe(server({
-            port: 8090,
+            port: 2322,
             open: true,
             livereload: true
         }))
 });
 
 gulp.task('default', function(cb) {
-    sequence('clean', ['minCss', 'copyCss', 'minJs', 'copyJs', 'copyHtml', 'copyImg'], 'watch', 'server', cb)
+    sequence('clean', ['copyFonts', 'minCss', 'copyCss', 'copyJs', 'copyHtml', 'copyImg'], 'watch', 'server', cb)
 })

@@ -43,7 +43,7 @@ button {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-    color: #999;
+    color: #999999;
 }
 
 html,
@@ -51,4 +51,130 @@ body,
 .wrap {
     width: 100%;
     height: 100%;
+}
+
+.wrap {
+    background: skyblue;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: .46rem;
+    background: #C4483B;
+    padding: 0 .15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i.icon {
+        font-size: .24rem;
+        color: #fff;
+        font-weight: inherit;
+    }
+    label {
+        flex: 1;
+        height: .3rem;
+        margin: 0 .2rem;
+        position: relative;
+        input {
+            width: 100%;
+            height: 100%;
+            border-radius: .15rem;
+            border: 0;
+            outline: none;
+            padding-left: .4rem;
+            &::-webkit-input-placeholder {
+                font-size: .12rem;
+            }
+        }
+        i.icon {
+            position: absolute;
+            left: .22rem;
+            top: .1rem;
+            font-size: .14rem;
+            color: #999999;
+        }
+    }
+}
+
+nav {
+    width: 100%;
+    height: .4rem;
+    background: #F8F9F9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    span {
+        height: .4rem;
+        line-height: .4rem;
+        font-size: .16rem;
+        font-weight: bold;
+        &.active {
+            border-bottom: 2px solid #C4483B;
+            color: #C4483B;
+        }
+    }
+}
+
+section {
+    flex: 1;
+    overflow: scroll;
+    .btn-items {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .tab {
+            width: 100%;
+            height: 100%;
+            .banner {
+                width: 100%;
+                height: 1.45rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+        }
+        .item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            &:nth-of-type(1) {
+                display: block;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: .5rem;
+    background: #333231;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #A7A7A7;
+        i.icon {
+            font-size: .22rem;
+        }
+        span {
+            font-size: .12rem;
+            margin-top: .03rem;
+        }
+        &.on {
+            color: #fff;
+        }
+    }
 }
